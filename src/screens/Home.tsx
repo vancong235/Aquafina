@@ -25,18 +25,16 @@ const Home: React.FC<HomeScreenProps> = ({navigation, route}) => {
   };
   
   return (
-      <ImageBackground source={require('../../assets/Page/Home/Group.png')} style={styles.imageBackground}>
+      <ImageBackground source={require('../../assets/Page/Home/Group.jpg')} style={styles.imageBackground}>
         <TouchableOpacity onPress={handleNavigateToStart} style={styles.container}>
-          <ImageBackground source={require('../../assets/Page/Home/Button.png')} style={styles.imageButton}>
-          </ImageBackground>
         </TouchableOpacity>
+
         <ImageBackground source={require('../../assets/Page/Home/Footer.png')} style={styles.imageFooter}>
         </ImageBackground>
 
-
         <ImageBackground source={require('../../assets/Page/Home/Qrcode.png')} style={styles.imageQrcode}>
         </ImageBackground>
-        
+
         <ImageBackground source={require('../../assets/Page/Home/Title.png')} style={styles.imageTitle}>
         </ImageBackground>
       </ImageBackground>
@@ -45,7 +43,12 @@ const Home: React.FC<HomeScreenProps> = ({navigation, route}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    bottom: windowHeight * 0.088,
+    position: 'absolute',
+    width: windowWidth * 0.58,
+    height: windowWidth * 0.58,
+    alignSelf: 'center',
+    resizeMode: 'contain',
   },
   imageBackground: {
     flex: 1,
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain"
   },
   imageButton: {
-    bottom: 105,
+    bottom: windowHeight * 0.135,
     position: 'absolute',
     width: windowWidth * 0.4,
     height: windowWidth * 0.4,
@@ -62,15 +65,15 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   imageQrcode: {
-    bottom: 70,
+    bottom: windowHeight * 0.06,
     position: 'absolute',
     width: windowWidth*0.113,
     height: windowWidth*0.14,
-    right: 10,
+    right: windowWidth*0.03,
     resizeMode: 'stretch',
   },
   imageTitle: {
-    bottom: 75,
+    bottom: windowHeight * 0.042,
     position: 'absolute',
     width: windowWidth*0.66,
     height: windowHeight * 0.033,
@@ -85,6 +88,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     resizeMode: 'stretch',
   },
+
 });
 
 export default Home;
